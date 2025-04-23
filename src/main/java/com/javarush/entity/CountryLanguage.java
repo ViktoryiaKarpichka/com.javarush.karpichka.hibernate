@@ -11,12 +11,13 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Getter
 @Setter
 @Entity
-@Table(schema = "world", name = "country_language")
+@Table(name = "country_language")
 public class CountryLanguage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,11 +31,10 @@ public class CountryLanguage {
     String language;
 
     @Column(name = "is_official")
-    @Type(type = "org.hibernate.type.NumericBooleanType")
+    @JdbcTypeCode(SqlTypes.SMALLINT)
     Boolean isOfficial;
 
     @Column(name = "percentage")
     BigDecimal percentage;
-
 
 }

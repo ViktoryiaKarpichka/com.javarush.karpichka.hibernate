@@ -3,10 +3,8 @@ package com.javarush.repository;
 import com.javarush.config.SessionManager;
 import com.javarush.entity.City;
 import java.util.List;
-import lombok.AllArgsConstructor;
 import org.hibernate.Session;
 
-@AllArgsConstructor
 public class CityRepository {
     public List<City> getItems(int offset, int limit) {
         Session session = SessionManager.getCurrentSession();
