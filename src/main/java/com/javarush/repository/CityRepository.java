@@ -19,4 +19,10 @@ public class CityRepository {
         return Math.toIntExact(session.createQuery("select count(c) from City c", Long.class).uniqueResult());
     }
 
+    public City getById(Integer id) {
+        Session session = SessionManager.getCurrentSession();
+        return session.createQuery("select c from City c join fetch c.country where c.id = :ID", City.class)
+                .setParameter("ID", id)
+                .getSingleResult();
+    }
 }
