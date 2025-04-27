@@ -19,7 +19,7 @@ To solve this, we decided to move frequently requested data into **Redis**, an i
 
 ## 🛠 Technologies Used
 
-- **Postgres** (instead of MySQL)
+- **Postgres**
 - **Hibernate** for ORM
 - **Redis** for caching
 - **Docker** for containerization
@@ -46,11 +46,7 @@ To solve this, we decided to move frequently requested data into **Redis**, an i
 - Run Redis as a Docker container
 - *(Optional)* Use RedisInsight to view cached data
 
-### 4. Import the SQL dump
-
-- Import the SQL dump into PostgreSQL.
-
-### 5. Run Application
+### 4. Run Application
 
 - Execute Application#getAllData() to load Redis with optimized data.
 
